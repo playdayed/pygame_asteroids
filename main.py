@@ -3,17 +3,18 @@ from constants import *
 from logger import log_state
 
 
+
+
 pygame.init()
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-num = 0
-
-while num == 0:
+running = True
+while running:
     log_state()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            return
+            running = False 
     screen.fill("black")
     pygame.display.flip()
 
